@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface TotalBackgroundProps {
+    isBalanceNegative: boolean;
+}
+
+export const Container = styled.div<TotalBackgroundProps>`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
@@ -27,7 +31,7 @@ export const Container = styled.div`
     }
 
     .total-style {
-        background: var(--green-transp);
+        background: ${(props) => props.isBalanceNegative ? "#FF0000c7" : "#28FF64c7"};
         font-weight: 600;
         strong {
             font-weight: 600;
