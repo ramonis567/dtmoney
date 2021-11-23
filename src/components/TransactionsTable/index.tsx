@@ -1,12 +1,10 @@
-import { useContext } from "react";
-import { TransactionsContext } from "../../TransactionsContext";
+import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
 
 export function TransactionsTable() {
     // usar contexto para passar os dados de transações para o componente summary
-    const transactions = useContext(TransactionsContext);
-    console.log(transactions)
+    const { transactions } = useTransactions();
     
     return (
        <Container>
